@@ -30,7 +30,7 @@ module ActiveRecord
       end
 
       def from_hstore hstore
-        PgHstore.load hstore, false
+        ActiveSupport::HashWithIndifferentAccess.new(PgHstore.load hstore, false)
       end
     end
   end
